@@ -20,6 +20,12 @@ const fetchCountries = async () => {
 };
 
 
+const border = (item) => {
+    if (!item) {
+        return " None"
+    }
+    item.map(border => border)
+}
 
 const showCountryDetails = (item) => {
     countryModal.classList.remove('hide')
@@ -28,28 +34,31 @@ const showCountryDetails = (item) => {
     <button class="backBtn" id="backBtn">back</button>
 
 
-    <div class="d-flex justify-content-around ">
-        <div>
-            <img src ='${item.flag}' />
+    <div class="d-flex flex-row flex-wrap justify-content-between card border-0 py-5">
+        <div class="col-10 col-md-5 pr-2">
+        <img src ='${item.flag}' alt='country' width="100%" height="250px" class="img-fluid detailImg"/>
+
         </div>
 
-        <div class="details"> 
-            <h3 class='card-title mb-5'>${item.name}</h3>
+        <div class="details card-body col-10 col-md-4 px-2 py-0"> 
+            <p class='card-title mb-5 fs-5'><strong>${item.name}</strong></p>
 
-            <div class="d-flex justify-content-between">
-                <span>
-                    <h4>Population: ${item.population}</h4> 
-                    <h4>Region: ${item.region}</h4>
-                    <h4>Capital: ${item.capital}</h4>
+            <div class="d-flex row justify-content-start">
+                <span class="col-10 col-md-6">
+                    <p><strong>Native Name</strong>: ${item.nativeName}</p> 
+                    <p><strong>Population</strong>: ${item.population}</p> 
+                    <p><strong>Region</strong>: ${item.region}</p>
+                    <p><strong>SubRegion</strong>: ${item.subregion}</p>
+                    <p><strong>Capital</strong>: ${item.capital}</p>
                 </span>
-                <span>
-                    <h4>Population: ${item.population}</h4> 
-                    <h4>Region: ${item.region}</h4>
-                    <h4>Capital: ${item.capital}</h4>
+                <span class="col-10 col-md-6">
+                    <p><strong>Top Level Domain</strong>: ${item.topLevelDomain}</p> 
+                    <p><strong>Currency</strong>: ${item.currencies.map(currency => currency.name)}</p>
+                    <p> <strong>languages</strong>: ${item.languages.map(lang => lang.name)}</p>
                 </span>
 
             </div>
-            <h4 class="mt-5">Border countries: ${item.capital}</h4>
+            <p class="mt-4"> <strong>Border countries:</strong>${border(item.borders)}</p>
 
         </div>
     </div>

@@ -1,8 +1,18 @@
+header {
+    position: fixed;
+    background: white;
+    width: 100%;
+    z-index: 5;
+}
+.countryModal {
+    top: 70px !important;
+}
+
 .background-white {
-    background-color: rgba(255, 255, 255, 0.932) ;
+    background-color: hsl(0, 0%, 98%) ;
 }
 .background-dark {
-    background-color: rgba(24, 23, 23, 0.932) !important;
+    background-color: hsl(207, 26%, 17%) !important;
     color: white;
 }
 .hide {
@@ -18,4 +28,13 @@
 .row {
     display: flex;
     justify-content: space-between;
+}
+
+.my-20 {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.detailImg {
+    height: 250px !important;
 }
