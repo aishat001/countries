@@ -5,15 +5,27 @@ header {
     z-index: 5;
 }
 .countryModal {
-    top: 70px !important;
+    top: 60px !important;
 }
 
-.background-white {
-    background-color: hsl(0, 0%, 98%) ;
+.lightmodeElement {
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(200, 15%, 8%);
 }
 .background-dark {
     background-color: hsl(207, 26%, 17%) !important;
-    color: white;
+    color: hsl(0, 0%, 100%);
+
+}
+
+
+.darkmodeElement {
+    background-color: hsl(209, 23%, 22%) !important;
+    color: hsl(0, 0%, 100%);
+}
+
+.search-bar {
+    margin-top: 80px !important;
 }
 .hide {
     display: none ;
